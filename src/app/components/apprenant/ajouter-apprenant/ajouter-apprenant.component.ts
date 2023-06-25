@@ -27,8 +27,8 @@ export class AjouterApprenantComponent {
     if (this.apprenantForm.controls.nom != null && this.apprenantForm.controls.prenom != null){
       let apprenant : ApprenantDto = {
         numApprenant : null,
-        nomapprenant : this.apprenantForm.controls.nom.value!,
-        prenomapprenant : this.apprenantForm.controls.prenom.value!,
+        nomApprenant : this.apprenantForm.controls.nom.value!,
+        prenomApprenant : this.apprenantForm.controls.prenom.value!,
         inscriptions : [],
       }
       this.apprenantService.addApprenant(apprenant).subscribe(()=>{

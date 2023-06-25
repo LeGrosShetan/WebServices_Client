@@ -15,7 +15,10 @@ export class ApprenantComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.apprenantService.getApprenants().subscribe((mesApprenants) => this.apprenants = mesApprenants);
+    this.apprenantService.getApprenants().subscribe((mesApprenants) => {
+      this.apprenants = mesApprenants;
+      console.log(mesApprenants)
+    });
   }
 
   accueil(): void {
