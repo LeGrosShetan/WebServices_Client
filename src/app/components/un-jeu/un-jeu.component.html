@@ -1,30 +1,25 @@
 <div class="jumbotron text-center">
-  <h1>Listing des Missions</h1>
+  <h1>{{jeu.libelleJeu}}</h1>
 </div>
 
 <div class="container">
   <a class="btn btn-secondary" (click)="accueil()" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
   <h2>Tableau des Missions</h2>
   <div class="container">
-    <h3>Liste des Missions</h3>
+    <h3>Liste des Missions du jeu {{jeu.libelleJeu}}</h3>
     <table class="table table-hover">
       <tr>
         <th class="col-md-1 col-xs-1">Numéro de Mission</th>
         <th class="col-md-6 col-xs-6">Libellé de Mission</th>
-        <th class="col-md-1 col-xs-1">Objectifs</th>
         <th class="col-md-1 col-xs-1"></th>
       </tr>
 
-      <tr *ngFor="let mission of missions">
-        <td class="col-md-1 col-xs-1">{{mission.numMission}}</td>
-        <td class="col-md-6 col-xs-6">{{mission.libMission}}</td>
-        <td>
-          <li *ngFor="let objectif of mission.objectifs | keyvalue" >
-            <a (click)="goToObjectif(objectif.key)">{{objectif.value}}</a>
-          </li>
-        </td>
+      <tr *ngFor="let mission of jeu.missions | keyvalue">
+        <td class="col-md-1 col-xs-1">{{mission.key}}</td>
+        <td class="col-md-6 col-xs-6">{{mission.value}}</td>
+
         <td class="col-md-1 col-xs-1">
-          <a (click)="goToMission(mission.numMission)">
+          <a (click)="goToMission(mission.key)">
             <span class="glyphicon glyphicon-eye-open"></span>
           </a>
         </td>

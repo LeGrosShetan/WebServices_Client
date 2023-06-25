@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
   <h1> Ajout d'un adhérent </h1>
 </div>
-<form method="post" action="/apprenant/insererApprenant" onsubmit="return teste()">
+<form method="post" action="/apprenant/saveApprenant" onsubmit="return teste()">
   <div class="col-md-12 well well-md">
     <h1>Ajouter apprenant</h1>
     <div class="row" >
@@ -11,7 +11,7 @@
     <div class="form-group">
       <label class="col-md-3 control-label">Nom de l'apprenant : </label>
       <div class="col-md-3">
-        <input type="text" name="txtnom" value="" id="txtnom" class="form-control" min="0">
+        <input type="text" name="nomapprenant" value="" id="nomapprenant" class="form-control" min="0">
       </div>
 
     </div>
@@ -22,7 +22,7 @@
     <div class="form-group">
       <label class="col-md-3 control-label">Prénom de l'apprenant : </label>
       <div class="col-md-3">
-        <input type="text" name="txtprenom" value="" id="txtprenom" class="form-control" min="0">
+        <input type="text" name="prenomapprenant" value="" id="prenomapprenant" class="form-control" min="0">
       </div>
     </div>
     <div class="row" >

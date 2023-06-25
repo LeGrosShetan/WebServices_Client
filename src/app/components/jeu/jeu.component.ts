@@ -22,6 +22,14 @@ export class JeuComponent implements OnInit{
   }
 
   goToMission(missionId : number) {
-    this.router.navigate(["/"])
+    this.router.navigate(["/uneMission", missionId])
+  }
+
+  goToJeu(jeuId : number) {
+    this.router.navigate(["/unJeu", jeuId])
+  }
+
+  accueil():void {
+    this.router.navigate(['/home'])
   }
 }

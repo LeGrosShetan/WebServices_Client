@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+  <h1>{{objectif.libObjectif}}</h1>
+</div>
+
+<div class="container">
+  <a class="btn btn-secondary" (click)="accueil()" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
+  <h2>Tableau des Actions</h2>
+  <div class="container">
+    <h3>Liste des Actions de l'objectif {{objectif.libObjectif}}</h3>
+    <table class="table table-hover">
+      <tr>
+        <th class="col-md-1 col-xs-1">Numéro d'Action</th>
+        <th class="col-md-6 col-xs-6">Libellé d'Action</th>
+        <th class="col-md-1 col-xs-1"></th>
+      </tr>
+
+      <tr *ngFor="let action of objectif.actions | keyvalue">
+        <td class="col-md-1 col-xs-1">{{action.key}}</td>
+        <td class="col-md-6 col-xs-6">{{action.value}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

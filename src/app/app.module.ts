@@ -26,6 +26,9 @@ export const routes: Routes = [
   { path: 'mission', component: MissionComponent },
   { path: 'objectif', component: ObjectifComponent },
   { path: 'jeu', component: JeuComponent },
+  { path: 'unJeu/:id', component : UnJeuComponent},
+  { path: 'unObjectif/:id', component : UnObjectifComponent},
+  { path: 'uneMission/:id', component: UneMissionComponent}
 ];
 
 @NgModule({
