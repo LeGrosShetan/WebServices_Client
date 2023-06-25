@@ -16,7 +16,7 @@ import { ReglesComponent } from './components/regles/regles.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from './shared/home/home.component';
 import { AjouterApprenantComponent } from './components/apprenant/ajouter-apprenant/ajouter-apprenant.component';
-
+import {ReactiveFormsModule} from "@angular/forms";
 export const routes: Routes = [
   { path: 'action', component: ActionComponent },
   { path: 'apprenant', component: ApprenantComponent },
@@ -45,6 +45,7 @@ export const routes: Routes = [
     AjouterApprenantComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes)

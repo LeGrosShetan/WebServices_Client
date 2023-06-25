@@ -19,15 +19,10 @@
           <td>{{jeu.numJeu}}</td>
           <td>{{jeu.libelleJeu}}</td>
           <td>
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Missions <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" *ngFor="let mission of jeu.missions | keyvalue">
-                  <li><a (click)="goToMission(mission.key)">{{mission.value}}</a></li>
+              <ul *ngFor="let mission of jeu.missions | keyvalue" >
+                  <a (click)="goToMission(mission.key)"> - {{mission.value}}</a>
 <!--                Ajouter un navigate : href="../../mission/getUneMission/${mission.getNummission()}"-->
               </ul>
-            </div>
           </td>
           <td>
             <a href="../../jeu/getUnJeu/${item.getNumjeu()}">
