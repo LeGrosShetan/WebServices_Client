@@ -49,6 +49,7 @@ export const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
