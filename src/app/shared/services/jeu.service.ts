@@ -12,7 +12,7 @@ export class JeuService {
   constructor(private http: HttpClient) { }
 
   public getJeux() : Observable<JeuDto[]>{
-    return this.http.get<JeuDto[]>(environment.apiUrl + "/action/getActions");
+    return this.http.get<JeuDto[]>(environment.apiUrl + "/jeu/getJeux");
   }
 
   public getJeuxByApprenant(apprenantId : number) : Observable<JeuDto[]>{

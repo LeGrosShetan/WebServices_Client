@@ -26,18 +26,18 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/apprenant/ajoutApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a></li>
-            <li><a href="/apprenant/getApprenants"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a></li>
+            <li><a (click)="ajoutApprenant()"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a></li>
+            <li><a (click)="apprenant()"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a></li>
           </ul>
         </li>
         <li>
-          <a href="/jeu/getJeux">
+          <a (click)="jeu()">
             <span class="glyphicon glyphicon-user"></span>
             Jeux
           </a>
         </li>
         <li>
-          <a href="/action/getActions">
+          <a (click)="action()">
             <span class="glyphicon glyphicon-user"></span>
             Actions
           </a>

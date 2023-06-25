@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {JeuService} from "../../shared/services/jeu.service";
 import {JeuDto} from "../../shared/models/jeu-dto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-jeu',
@@ -10,12 +11,17 @@ import {JeuDto} from "../../shared/models/jeu-dto";
 export class JeuComponent implements OnInit{
   public jeux : JeuDto[] = [];
 
-  constructor(private jeuService : JeuService) {
+  constructor(private jeuService : JeuService,
+              private router : Router) {
   }
 
   ngOnInit() {
     this.jeuService.getJeux().subscribe((mesJeux:JeuDto[]) => {
       this.jeux = mesJeux
     })
+  }
+
+  goToMission(missionId : number) {
+    this.router.navigate(["/"])
   }
 }
