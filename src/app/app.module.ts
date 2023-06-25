@@ -20,7 +20,7 @@ import { AjouterApprenantComponent } from './components/apprenant/ajouter-appren
 export const routes: Routes = [
   { path: 'action', component: ActionComponent },
   { path: 'apprenant', component: ApprenantComponent },
-  // { path: 'ajouterApprenant', component: ApprenantComponent },
+  { path: 'ajouterApprenant', component: AjouterApprenantComponent },
   { path: 'home', component: HomeComponent },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'mission', component: MissionComponent },

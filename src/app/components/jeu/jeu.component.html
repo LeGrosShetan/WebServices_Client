@@ -1,1 +1,41 @@
-<p>jeu works!</p>
+<div class="jumbotron text-center">
+  <h1>Listing des Jeux</h1>
+</div>
+
+<div class="container">
+  <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
+  <h2>Tableau des Jeux</h2>
+  <div class="container">
+    <h3>Liste des Jeux</h3>
+    <table class="table table-hover">
+      <tr>
+        <th class="col-md-1">Numéro de jeu</th>
+        <th class="col-md-2">Libellé de jeu</th>
+        <th class="col-md-2">Mission</th>
+
+      </tr>
+
+        <tr *ngFor="let jeu of jeux">
+          <td>{{jeu.numJeu}}</td>
+          <td>{{jeu.libelleJeu}}</td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Missions <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" *ngFor="let mission of jeu.missions | keyvalue">
+                  <li><a (click)="goToMission(mission.key)">{{mission.value}}</a></li>
+<!--                Ajouter un navigate : href="../../mission/getUneMission/${mission.getNummission()}"-->
+              </ul>
+            </div>
+          </td>
+          <td>
+            <a href="../../jeu/getUnJeu/${item.getNumjeu()}">
+              <span class="glyphicon glyphicon-eye-open"></span>
+            </a>
+          </td>
+        </tr>
+
+    </table>
+  </div>
+</div>
