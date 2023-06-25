@@ -9,28 +9,26 @@
     <h3>Liste des Jeux</h3>
     <table class="table table-hover">
       <tr>
-        <th class="col-md-1">Numéro de jeu</th>
-        <th class="col-md-2">Libellé de jeu</th>
-        <th class="col-md-2">Mission</th>
-
+        <th class="col-md-1 col-xs-1">Numéro de jeu</th>
+        <th class="col-md-6 col-xs-6">Libellé de jeu</th>
+        <th class="col-md-1 col-xs-1">Missions</th>
+        <th class="col-md-1 col-xs-1"></th>
       </tr>
 
-        <tr *ngFor="let jeu of jeux">
-          <td>{{jeu.numJeu}}</td>
-          <td>{{jeu.libelleJeu}}</td>
-          <td>
-              <ul *ngFor="let mission of jeu.missions | keyvalue" >
-                  <a (click)="goToMission(mission.key)"> - {{mission.value}}</a>
-<!--                Ajouter un navigate : href="../../mission/getUneMission/${mission.getNummission()}"-->
-              </ul>
-          </td>
-          <td>
-            <a href="../../jeu/getUnJeu/${item.getNumjeu()}">
-              <span class="glyphicon glyphicon-eye-open"></span>
-            </a>
-          </td>
-        </tr>
-
+      <tr *ngFor="let jeu of jeux">
+        <td class="col-md-1 col-xs-1">{{jeu.numJeu}}</td>
+        <td class="col-md-6 col-xs-6">{{jeu.libelleJeu}}</td>
+        <td>
+          <li *ngFor="let mission of jeu.missions | keyvalue" >
+            <a (click)="goToMission(mission.key)">{{mission.value}}</a>
+          </li>
+        </td>
+        <td class="col-md-1 col-xs-1">
+          <a (click)="goToJeu(jeu.numJeu)">
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </a>
+        </td>
+      </tr>
     </table>
   </div>
 </div>

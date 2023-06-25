@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApprenantService} from "../../shared/services/apprenant.service";
 import {ApprenantDto} from "../../shared/models/apprenant-dto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-apprenant',
@@ -9,10 +10,15 @@ import {ApprenantDto} from "../../shared/models/apprenant-dto";
 })
 export class ApprenantComponent implements OnInit{
   public apprenants : ApprenantDto[] = [];
-  constructor(private apprenantService : ApprenantService) {
+  constructor(private apprenantService : ApprenantService,
+              private router: Router) {
   }
 
   ngOnInit(){
     this.apprenantService.getApprenants().subscribe((mesApprenants) => this.apprenants = mesApprenants);
+  }
+
+  accueil(): void {
+    this.router.navigate(['/home']);
   }
 }
