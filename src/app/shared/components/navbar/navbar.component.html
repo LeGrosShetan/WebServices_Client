@@ -5,10 +5,10 @@
     </div>
     <p class="navbar-text">Permis Piste</p>
     <ul class="nav navbar-nav">
-      <li><a (click)="accueil()"> <span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+      <li><a class="selectable" (click)="accueil()"> <span class="glyphicon glyphicon-home"></span> Accueil</a></li>
 <!--      <c:if test="${sessionScope.id == null }">-->
         <li *ngIf="authentificationService.utilisateur == undefined" class="dropdown">
-          <a (click)="login()">
+          <a class="selectable" (click)="login()">
             <span class="glyphicon glyphicon-user"></span>
             Se Connecter
           </a>
@@ -20,30 +20,30 @@
           </a>
         </li>
         <li>
-          <a (click)="mission()">
+          <a class="selectable" (click)="mission()">
             <span class="glyphicon glyphicon-user"></span>
             Missions
           </a>
         <li>
-          <a (click)="ajoutApprenant()"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a>
+          <a class="selectable" (click)="ajoutApprenant()"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a>
         </li>
         <li>
-          <a (click)="apprenant()"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a>
+          <a class="selectable" (click)="apprenant()"><span class="glyphicon glyphicon-th-list"></span> Lister les apprenants</a>
         </li>
         <li>
-          <a (click)="jeu()">
+          <a class="selectable" (click)="jeu()">
             <span class="glyphicon glyphicon-user"></span>
             Jeux
           </a>
         </li>
         <li>
-          <a (click)="action()">
+          <a class="selectable" (click)="action()">
             <span class="glyphicon glyphicon-user"></span>
             Actions
           </a>
         </li>
       <li *ngIf="authentificationService.utilisateur != undefined" class="dropdown">
-        <a (click)="deconnexion()">
+        <a class="selectable" (click)="deconnexion()">
           <span class="glyphicon glyphicon-user"></span>
           Déconnexion
         </a>
