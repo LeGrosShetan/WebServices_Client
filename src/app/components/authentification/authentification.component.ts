@@ -29,7 +29,7 @@ export class AuthentificationComponent {
     if (this.profileForm.controls.login != null && this.profileForm.controls.password != null){
       let utilisateur : UtilisateurDto = {
         nomUtil : this.profileForm.controls.login.value,
-        motpasse : this.profileForm.controls.password.value
+        motPasse : this.profileForm.controls.password.value
       }
       this.authentificationService.login(utilisateur).subscribe((utilisateur)=>{
         if(utilisateur.numUtil == -1){
