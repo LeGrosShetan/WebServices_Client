@@ -16,7 +16,11 @@ import { ReglesComponent } from './components/regles/regles.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from './shared/home/home.component';
 import { AjouterApprenantComponent } from './components/apprenant/ajouter-apprenant/ajouter-apprenant.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { UnJeuComponent } from './components/un-jeu/un-jeu.component';
+import { UneMissionComponent } from './components/une-mission/une-mission.component';
+import { UnObjectifComponent } from './components/un-objectif/un-objectif.component';
+
 export const routes: Routes = [
   { path: 'action', component: ActionComponent },
   { path: 'apprenant', component: ApprenantComponent },
@@ -45,7 +49,10 @@ export const routes: Routes = [
     ObjectifComponent,
     ReglesComponent,
     HomeComponent,
-    AjouterApprenantComponent
+    AjouterApprenantComponent,
+    UnJeuComponent,
+    UneMissionComponent,
+    UnObjectifComponent
   ],
   imports: [
     ReactiveFormsModule,
