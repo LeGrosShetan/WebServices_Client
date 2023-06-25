@@ -1,0 +1,21 @@
+<div class="jumbotron text-center">
+  <h1>Listing des Actions</h1>
+</div>
+
+<div class="container">
+  <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
+  <h2>Tableau des Actions</h2>
+  <div class="container">
+    <h3>Liste des Actions</h3>
+    <table class="table table-hover">
+      <tr>
+        <th class="col-md-1">Numéro d'action</th>
+        <th class="col-md-2">Libellé d'action</th>
+      </tr>
+      <tr *ngFor="let action of actions">
+          <td>{{action.numAction}}</td>
+          <td>{{action.libAction}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

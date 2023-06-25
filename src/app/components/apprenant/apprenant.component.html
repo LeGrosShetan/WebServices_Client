@@ -1,0 +1,26 @@
+<div class="jumbotron text-center">
+  <h1>Listing des Apprenants</h1>
+</div>
+
+<div class="container">
+  <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
+  <h2>Tableau des Apprenants</h2>
+  <div class="container">
+    <h3>Liste des Apprenants</h3>
+    <table class="table table-hover">
+      <tr>
+        <th class="col-md-1">Numero Apprenant</th>
+        <th class="col-md-2">Nom</th>
+        <th class="col-md-2">Prénom</th>
+
+      </tr>
+
+      <tr *ngFor="let apprenant of this.apprenants">
+        <td>{{apprenant.numApprenant}}</td>
+        <td>{{apprenant.nomApprenant}}</td>
+        <td>{{apprenant.prenomApprenant}}</td>
+      </tr>
+
+    </table>
+  </div>
+</div>
