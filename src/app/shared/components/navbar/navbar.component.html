@@ -7,10 +7,16 @@
     <ul class="nav navbar-nav">
       <li><a (click)="accueil()"> <span class="glyphicon glyphicon-home"></span> Accueil</a></li>
 <!--      <c:if test="${sessionScope.id == null }">-->
-        <li class="dropdown">
+        <li *ngIf="authentificationService.utilisateur == undefined" class="dropdown">
           <a (click)="login()">
             <span class="glyphicon glyphicon-user"></span>
             Se Connecter
+          </a>
+        </li>
+        <li *ngIf="authentificationService.utilisateur != undefined" class="dropdown">
+          <a>
+            <span class="glyphicon glyphicon-user"></span>
+            {{authentificationService.utilisateur?.nomUtil}}
           </a>
         </li>
         <li>
@@ -36,6 +42,12 @@
             Actions
           </a>
         </li>
+      <li *ngIf="authentificationService.utilisateur != undefined" class="dropdown">
+        <a (click)="deconnexion()">
+          <span class="glyphicon glyphicon-user"></span>
+          Déconnexion
+        </a>
+      </li>
 <!--      </c:if>-->
 <!--      <c:if test="${sessionScope.id > 0  }">-->
 <!--        <li>-->

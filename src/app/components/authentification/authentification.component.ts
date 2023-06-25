@@ -28,14 +28,15 @@ export class AuthentificationComponent {
     let login = this.profileForm.controls.login
     if (this.profileForm.controls.login != null && this.profileForm.controls.password != null){
       let utilisateur : UtilisateurDto = {
-        nomUtil : this.profileForm.controls.login.value,
-        motPasse : this.profileForm.controls.password.value
+        nomUtil : this.profileForm.controls.login.value!,
+        motPasse : this.profileForm.controls.password.value!
       }
-      this.authentificationService.login(utilisateur).subscribe((utilisateur)=>{
-        if(utilisateur.numUtil == -1){
+      this.authentificationService.login(utilisateur).subscribe((appUser)=>{
+        if(appUser.numUtil == -1){
           this.motPasseIncorrect = true;
         }else {
           this.authentificationService.connected = true;
+          this.authentificationService.utilisateur = utilisateur;
         }
         this.connectionTry = true
       })

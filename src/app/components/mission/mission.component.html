@@ -7,26 +7,27 @@
   <h2>Tableau des Missions</h2>
   <div class="container">
     <h3>Liste des Missions</h3>
+    <br>
     <table class="table table-hover">
       <tr>
+        <th class="col-md-1 col-xs-1"></th>
         <th class="col-md-1 col-xs-1">Numéro de Mission</th>
         <th class="col-md-6 col-xs-6">Libellé de Mission</th>
         <th class="col-md-1 col-xs-1">Objectifs</th>
-        <th class="col-md-1 col-xs-1"></th>
       </tr>
 
       <tr *ngFor="let mission of missions">
-        <td class="col-md-1 col-xs-1">{{mission.numMission}}</td>
-        <td class="col-md-6 col-xs-6">{{mission.libMission}}</td>
-        <td>
-          <li *ngFor="let objectif of mission.objectifs | keyvalue" >
-            <a (click)="goToObjectif(objectif.key)">{{objectif.value}}</a>
-          </li>
-        </td>
         <td class="col-md-1 col-xs-1">
           <a (click)="goToMission(mission.numMission)">
             <span class="glyphicon glyphicon-eye-open"></span>
           </a>
+        </td>
+        <td class="col-md-1 col-xs-1">{{mission.numMission}}</td>
+        <td class="col-md-6 col-xs-6">{{mission.libMission}}</td>
+        <td>
+          <li *ngFor="let objectif of mission.objectifs | keyvalue" >
+            <a id="objectif" (click)="goToObjectif(objectif.key)">{{objectif.value}}</a>
+          </li>
         </td>
       </tr>
     </table>
